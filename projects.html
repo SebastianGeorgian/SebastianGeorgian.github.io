@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Projects — Dinu Georgian Sebastian</title>
+<meta name="description" content="Projects by Dinu Georgian Sebastian — GreenHouse Monitor: six sensor types on a Raspberry Pi 5 with PostgreSQL, a Flask dashboard and Telegram alerts, running 24/7. mygit: a working subset of Git written from scratch in C11, with its own SHA-256.">
+<meta property="og:title" content="Projects — Dinu Georgian Sebastian">
+<meta property="og:description" content="GreenHouse Monitor: sensors → Raspberry Pi 5 → PostgreSQL → Flask dashboard, TFT, Telegram alerts. mygit: a minimal Git in C11, no dependencies.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── SVG icon sprite ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4 7l8 6 8-6"/>
+    </symbol>
+    <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6.5" cy="6" r="2.3"/><circle cx="6.5" cy="18" r="2.3"/><circle cx="17.5" cy="9" r="2.3"/>
+      <path d="M6.5 8.3v7.4"/><path d="M15.4 10.4c-2.4 1.6-6 1.4-7.6 4"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 8V3.5h10V8"/><rect x="4" y="8" width="16" height="9" rx="2"/><rect x="7" y="14" width="10" height="6.5" rx="1"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7"/><path d="M9 7h8v8"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ── Topbar ── -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="Back to the overview">
+      <span class="brand-tick" aria-hidden="true"></span>
+      DINU G. <em>SEBASTIAN</em>
+    </a>
+    <nav class="nav" aria-label="Pages">
+      <a href="index.html">Overview</a>
+      <a href="projects.html" class="active" aria-current="page">Projects</a>
+      <a href="side-jobs.html">Side jobs</a>
+      <button class="btn-print" data-print title="Print this page or save it as a PDF">
+        <svg class="icon icon-sm"><use href="#i-print"/></svg> Print
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <!-- ── Masthead ── -->
+  <section class="masthead">
+    <div class="avail"><span class="avail-dot"></span> two builds · documented properly</div>
+    <h1>Projects</h1>
+    <p class="role">
+      Two projects from opposite ends of the stack. <strong>GreenHouse Monitor</strong> —
+      sensors, database, backend, dashboard and alerting, running 24/7 as Linux services.
+      <strong>mygit</strong> — a working subset of Git in C11, no libraries, down to a
+      hand-written SHA-256.
+    </p>
+    <div class="mast-meta">
+      <span><a href="#greenhouse">GreenHouse Monitor</a></span>
+      <span><a href="#mygit">mygit</a></span>
+    </div>
+  </section>
+
+  <div class="cv-grid" style="grid-template-columns: 1fr;">
+    <main class="main">
+
+      <!-- ── The panel ── -->
+      <section class="cv-section reveal" id="greenhouse">
+        <div class="sec-head"><h2>GreenHouse Monitor</h2><div class="rule"></div></div>
+
+        <div class="project-panel">
+          <div class="project-head">
+            <h3>Greenhouse <span>Monitor</span></h3>
+            <span class="project-kicker">bachelor's thesis · runs 24/7</span>
+          </div>
+
+          <p class="desc">
+            A smart greenhouse that watches itself: <strong>six sensor types</strong> wired to a
+            Raspberry Pi 5 feed a PostgreSQL database; a secured Flask dashboard renders live
+            charts and heatmaps; a local TFT screen shows conditions at a glance — and when
+            flame or gas is detected, the buzzer fires and a <strong>Telegram alert</strong>
+            reaches my phone within seconds.
+          </p>
+
+          <div class="stats">
+            <span class="stat"><b>6</b> sensor types</span>
+            <span class="stat"><b>10 Hz</b> sampling + debounce</span>
+            <span class="stat"><b>6-min</b> climate aggregation</span>
+            <span class="stat"><b>5 s</b> alert polling</span>
+            <span class="stat"><b>24/7</b> systemd auto-restart</span>
+          </div>
+
+          <figure class="figure" role="img" aria-label="System architecture: five field sensors feed a Raspberry Pi 5, which writes to PostgreSQL; the database serves a Flask web dashboard, a TFT display and a Telegram alert engine.">
+            <svg class="diagram" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
+              <path class="tick" d="M6 18 V6 H18"/>
+              <path class="tick" d="M742 6 H754 V18"/>
+              <path class="tick" d="M6 222 V234 H18"/>
+              <path class="tick" d="M742 234 H754 V222"/>
+
+              <text x="14" y="24" class="t-tag">FIELD</text>
+              <rect x="14" y="34"  width="120" height="30" class="node"/><text x="26" y="53" class="t-title">DHT11</text><text x="82" y="53" class="t-sub">t° / RH</text>
+              <rect x="14" y="72"  width="120" height="30" class="node"/><text x="26" y="91" class="t-title">RAIN</text>
+              <rect x="14" y="110" width="120" height="30" class="node"/><text x="26" y="129" class="t-title">FLAME</text>
+              <rect x="14" y="148" width="120" height="30" class="node"/><text x="26" y="167" class="t-title">MQ-6</text><text x="72" y="167" class="t-sub">gas</text>
+              <rect x="14" y="186" width="120" height="30" class="node"/><text x="26" y="205" class="t-title">SOIL</text><text x="66" y="205" class="t-sub">moisture</text>
+
+              <path class="flow" d="M134 49  C 168 49,  172 96, 206 108"/>
+              <path class="flow" d="M134 87  C 168 87,  172 108, 206 118"/>
+              <path class="flow" d="M134 125 C 168 125, 172 128, 206 128"/>
+              <path class="flow" d="M134 163 C 168 163, 172 148, 206 138"/>
+              <path class="flow" d="M134 201 C 168 201, 172 160, 206 148"/>
+
+              <text x="208" y="24" class="t-tag">EDGE</text>
+              <rect x="206" y="88" width="150" height="80" class="node node-hi"/>
+              <circle cx="222" cy="104" r="3.5" class="pin"/>
+              <text x="232" y="108" class="t-title">RASPBERRY PI 5</text>
+              <text x="220" y="128" class="t-sub">GPIO · debounce 10 Hz</text>
+              <text x="220" y="142" class="t-sub">6-min averaging</text>
+              <text x="220" y="156" class="t-sub">buzzer patterns (SOS)</text>
+
+              <path class="flow" d="M356 128 C 388 128, 392 128, 424 128"/>
+              <text x="366" y="118" class="t-sub">INSERT</text>
+
+              <text x="426" y="24" class="t-tag">STORE</text>
+              <rect x="424" y="98" width="140" height="60" class="node node-hi"/>
+              <text x="440" y="122" class="t-title">POSTGRESQL</text>
+              <text x="440" y="140" class="t-sub">sensor_readings</text>
+
+              <path class="flow" d="M564 112 C 598 108, 602 62,  636 54"/>
+              <path class="flow" d="M564 128 C 598 128, 602 128, 636 128"/>
+              <path class="flow" d="M564 144 C 598 148, 602 196, 636 204"/>
+
+              <text x="638" y="24" class="t-tag">OUT</text>
+              <rect x="636" y="34" width="112" height="44" class="node"/>
+              <text x="648" y="52" class="t-title">FLASK</text>
+              <text x="648" y="67" class="t-sub">web dashboard</text>
+
+              <rect x="636" y="108" width="112" height="44" class="node"/>
+              <text x="648" y="126" class="t-title">TFT ST7735</text>
+              <text x="648" y="141" class="t-sub">local display</text>
+
+              <rect x="636" y="182" width="112" height="44" class="node"/>
+              <text x="648" y="200" class="t-title">TELEGRAM</text>
+              <text x="648" y="215" class="t-sub">fire / gas alerts</text>
+            </svg>
+            <figcaption class="figcaption">
+              <span><b>FIG. 01</b> — system architecture</span>
+              <span>auth · rate limiting · connection pooling · gunicorn + systemd</span>
+            </figcaption>
+          </figure>
+
+          <div class="project-foot">
+            <!-- TODO: replace with your real GitHub repo URL once the project is pushed -->
+            <a class="btn-ghost" href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener" title="Repo link coming — points to the profile for now">Source on GitHub <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <span class="note">FIG. 01 — same system, in detail below</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Field & edge ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Field &amp; edge</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            Six sensor types cover the conditions that matter in a greenhouse:
+            <strong>DHT11</strong> for temperature and humidity, <strong>soil-moisture</strong>,
+            <strong>rain</strong>, <strong>flame</strong> and <strong>MQ-6 gas</strong> — climate on
+            one side, safety on the other. Everything is wired to a
+            <strong>Raspberry Pi 5</strong> over GPIO.
+          </p>
+          <p>
+            Raw pins are noisy, so inputs are sampled at <strong>10 Hz and debounced</strong>
+            before a value is trusted. Climate readings are <strong>averaged over 6-minute
+            windows</strong> on the device — the database stores signal, not noise. Safety
+            sensors skip the averaging: flame or gas trips the local <strong>buzzer
+            (SOS pattern)</strong> immediately.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">Raspberry Pi 5</span><span class="tag">GPIO</span>
+          <span class="tag">10 Hz debounce</span><span class="tag">6-min averaging</span>
+          <span class="tag">buzzer SOS</span>
+        </div>
+      </section>
+
+      <!-- ── Storage ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Storage</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            Validated readings are inserted into <strong>PostgreSQL</strong> as time-stamped rows
+            in a <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">sensor_readings</code>
+            schema built for the questions the dashboard actually asks — trends, ranges and
+            extremes over time, not single points. Access goes through
+            <strong>connection pooling</strong>, so the dashboard, the display and the alert
+            engine can read concurrently without exhausting the database.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">PostgreSQL</span><span class="tag">time-stamped schema</span>
+          <span class="tag">aggregation queries</span><span class="tag">connection pooling</span>
+        </div>
+      </section>
+
+      <!-- ── Outputs ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Dashboard &amp; alerts</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            The main window into the system is a <strong>Flask dashboard</strong> with live charts
+            and heatmaps, behind <strong>authentication</strong> and <strong>rate limiting</strong>,
+            served by <strong>gunicorn</strong>. Next to the greenhouse itself, a small
+            <strong>TFT screen (ST7735, SPI)</strong> shows current conditions at a glance — no
+            phone or laptop needed.
+          </p>
+          <p>
+            A separate alert engine polls for danger conditions every <strong>5 seconds</strong>:
+            if flame or gas is detected, a <strong>Telegram message</strong> lands on my phone
+            within seconds — the difference between finding out now and finding out tomorrow.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">Flask</span><span class="tag">auth</span><span class="tag">rate limiting</span>
+          <span class="tag">gunicorn</span><span class="tag">TFT ST7735</span><span class="tag hi">Telegram alerts</span>
+        </div>
+      </section>
+
+      <!-- ── Reliability ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Reliability</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            A monitoring system is only useful if it is running when something goes wrong.
+            Every component runs as a <strong>systemd service</strong> with auto-restart — if a
+            process dies, it comes back on its own. The system runs <strong>24/7</strong> without
+            anyone babysitting it, which is the entire point.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── Next ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>What I'd build next</h2><div class="rule"></div></div>
+        <article class="entry">
+          <ul>
+            <li><strong>MQTT</strong> between sensor nodes and the backend, so devices publish to a broker instead of being wired into the application — adding a sensor shouldn't mean touching the backend.</li>
+            <li><strong>TimescaleDB</strong> on top of PostgreSQL once reading volume outgrows the plain relational schema.</li>
+            <li><strong>LoRa</strong> for greenhouses out of Wi-Fi range — long distance, low power, small payloads: exactly the shape of this data.</li>
+            <li>A <strong>bare-metal microcontroller node in C</strong> (ESP32 / STM32) reading a sensor over I2C and reporting over UART — moving the acquisition end from Linux down to the metal.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ══════════════════ PROJECT 2: mygit ══════════════════ -->
+
+      <section class="cv-section reveal" id="mygit">
+        <div class="sec-head"><h2>mygit</h2><div class="rule"></div></div>
+
+        <div class="project-panel">
+          <div class="project-head">
+            <h3>mygit <span>— Git, from scratch</span></h3>
+            <span class="project-kicker">systems programming · C11 · no libraries</span>
+          </div>
+
+          <p class="desc">
+            A working subset of Git, written in C11 with <strong>zero external
+            dependencies</strong> — including the SHA-256 hash function, implemented from
+            scratch and verified against the official NIST vectors. It doesn't shell out to
+            the real Git or fake the behaviour with file copies: it uses the same core model —
+            a <strong>content-addressable object store</strong> of blobs, trees and commits,
+            a binary staging area and refs — so <strong>checkout genuinely reconstructs any
+            snapshot from hashes alone</strong>.
+          </p>
+
+          <div class="stats">
+            <span class="stat"><b>6</b> commands</span>
+            <span class="stat"><b>~1.4k</b> lines of C</span>
+            <span class="stat"><b>0</b> dependencies</span>
+            <span class="stat"><b>14</b> test scenarios</span>
+            <span class="stat"><b>ASan + UBSan</b> clean</span>
+            <span class="stat"><b>0</b> compiler warnings</span>
+          </div>
+
+          <figure class="figure" role="img" aria-label="Architecture: working tree files are hashed by add into the binary index; commit turns the index into blob, tree and commit objects in a content-addressable store named by SHA-256; refs point HEAD at a branch, and each commit at its parent.">
+            <svg class="diagram" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
+              <!-- drafting corner ticks -->
+              <path class="tick" d="M6 18 V6 H18"/>
+              <path class="tick" d="M742 6 H754 V18"/>
+              <path class="tick" d="M6 222 V234 H18"/>
+              <path class="tick" d="M742 234 H754 V222"/>
+
+              <!-- working tree -->
+              <text x="14" y="24" class="t-tag">WORKING TREE</text>
+              <rect x="14" y="52"  width="106" height="28" class="node"/><text x="26" y="70"  class="t-title">a.txt</text>
+              <rect x="14" y="88"  width="106" height="28" class="node"/><text x="26" y="106" class="t-title">lib/b.txt</text>
+              <rect x="14" y="124" width="106" height="28" class="node"/><text x="26" y="142" class="t-title">run.sh</text><text x="82" y="142" class="t-sub">+x</text>
+              <rect x="14" y="160" width="106" height="28" class="node"/><text x="26" y="178" class="t-title">bin.dat</text>
+
+              <!-- add -> index -->
+              <path class="flow" d="M120 66  C 150 66,  156 104, 186 112"/>
+              <path class="flow" d="M120 102 C 150 102, 156 114, 186 120"/>
+              <path class="flow" d="M120 138 C 150 138, 156 130, 186 128"/>
+              <path class="flow" d="M120 174 C 150 174, 156 144, 186 136"/>
+              <text x="132" y="94" class="t-sub">add</text>
+
+              <!-- index -->
+              <text x="188" y="24" class="t-tag">STAGE</text>
+              <rect x="186" y="84" width="132" height="80" class="node node-hi"/>
+              <circle cx="202" cy="100" r="3.5" class="pin"/>
+              <text x="212" y="104" class="t-title">INDEX</text>
+              <text x="200" y="124" class="t-sub">"MGIX" · big-endian</text>
+              <text x="200" y="138" class="t-sub">sorted by path</text>
+              <text x="200" y="152" class="t-sub">mtime + size cache</text>
+
+              <!-- index -> objects -->
+              <path class="flow" d="M318 124 C 348 124, 356 124, 386 124"/>
+              <text x="328" y="114" class="t-sub">commit</text>
+
+              <!-- object store -->
+              <text x="388" y="24" class="t-tag">OBJECT STORE · SHA-256</text>
+              <rect x="386" y="44"  width="132" height="34" class="node node-hi"/>
+              <text x="398" y="66" class="t-title">BLOB</text><text x="450" y="66" class="t-sub">file bytes</text>
+              <rect x="386" y="106" width="132" height="34" class="node node-hi"/>
+              <text x="398" y="128" class="t-title">TREE</text><text x="446" y="128" class="t-sub">one directory</text>
+              <rect x="386" y="168" width="132" height="34" class="node node-hi"/>
+              <text x="398" y="190" class="t-title">COMMIT</text><text x="462" y="190" class="t-sub">+ parent</text>
+
+              <!-- commit -> tree -> blob (containment, drawn upward) -->
+              <path class="flow" d="M410 168 C 410 154, 410 154, 410 140"/>
+              <path class="flow" d="M410 106 C 410 92,  410 92,  410 78"/>
+              <text x="422" y="158" class="t-sub">points to</text>
+              <text x="422" y="96" class="t-sub">points to</text>
+
+              <!-- objects -> refs -->
+              <path class="flow" d="M518 185 C 556 185, 562 150, 600 142"/>
+              <text x="530" y="176" class="t-sub">tip</text>
+
+              <!-- refs -->
+              <text x="602" y="24" class="t-tag">REFS</text>
+              <rect x="600" y="72"  width="146" height="44" class="node"/>
+              <text x="612" y="90" class="t-title">HEAD</text>
+              <text x="612" y="105" class="t-sub">ref: refs/heads/master</text>
+
+              <rect x="600" y="126" width="146" height="44" class="node node-hi"/>
+              <text x="612" y="144" class="t-title">master</text>
+              <text x="612" y="159" class="t-sub">64 hex chars in a file</text>
+
+              <!-- HEAD -> master indirection -->
+              <path class="flow" d="M673 116 C 673 121, 673 121, 673 126"/>
+            </svg>
+            <figcaption class="figcaption">
+              <span><b>FIG. 02</b> — object model &amp; data flow</span>
+              <span>content-addressed · write-once · atomic index writes</span>
+            </figcaption>
+          </figure>
+
+          <div class="project-foot">
+            <!-- TODO: replace with the real repo URL once it's pushed -->
+            <a class="btn-ghost" href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener" title="Repo link coming — points to the profile for now">Source on GitHub <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <span class="note">FIG. 02 — the model, in detail below</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Content addressing ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Content addressing</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            The idea the whole thing rests on: <strong>an object's name is the SHA-256 of its
+            contents</strong>. Not a name I choose — the content dictates its own address.
+            Every object is serialised as <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">"&lt;type&gt; &lt;size&gt;\0&lt;payload&gt;"</code>,
+            hashed over the whole thing (header included, so a blob and a tree holding the same
+            bytes can't collide), and stored at <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">objects/&lt;first 2 hex&gt;/&lt;rest&gt;</code>
+            — the 2-character split keeps directories small enough that the filesystem stays fast.
+          </p>
+          <p>
+            Three things fall out of that for free: <strong>deduplication</strong> (two identical
+            files — or a thousand — are stored once, and the code for it is a single
+            <em>if</em>), <strong>immutability</strong> (an object can't change without changing
+            its name, so history can't be quietly rewritten), and <strong>verifiability</strong>
+            (re-hash any object and compare it to its own filename — bit rot shows up immediately).
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">SHA-256 from scratch</span><span class="tag">NIST vectors</span>
+          <span class="tag">write-once store</span><span class="tag">free deduplication</span>
+        </div>
+      </section>
+
+      <!-- ── Serialization ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Binary serialization</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            The index is a custom binary format: a <strong>magic number</strong>
+            (<code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">MGIX</code>, so a
+            wrong file is rejected instead of misread), a version (so the format can evolve
+            without corrupting old repos), then length-prefixed entries — all integers
+            <strong>big-endian</strong>.
+          </p>
+          <p>
+            Written out byte by byte, deliberately: dumping the struct straight to disk would
+            hard-code the compiler's <strong>padding</strong> and the CPU's <strong>byte
+            order</strong> into the file, so a repo written on x86 could read back wrong on ARM.
+            Commits, by contrast, are plain text — different file, different criteria: the index
+            is rewritten constantly and never read by a human, a commit is written once and read
+            during debugging.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">custom binary format</span><span class="tag">big-endian</span>
+          <span class="tag">length-prefixing</span><span class="tag">magic + versioning</span>
+          <span class="tag">atomic writes</span>
+        </div>
+      </section>
+
+      <!-- ── Algorithm ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Building trees from a flat index</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            The index is a flat sorted list; a commit needs a <strong>hierarchy</strong> of tree
+            objects, one per directory. The observation that solves it: because the list is
+            sorted with <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">strcmp</code>,
+            every path inside a given directory is <strong>contiguous</strong> — no foreign path
+            can sort between two paths sharing a prefix.
+          </p>
+          <p>
+            So <strong>one linear scan per level</strong> groups the children, and each group is
+            recursed into first — subtrees are written before their parents, and the parent
+            embeds the child's hash as data. No hash map, no extra sorting, no auxiliary
+            structures. The case that catches naive implementations:
+            <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">dir.txt</code> sorts before
+            <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">dir/x</code> (ASCII: '.' &lt; '/'),
+            and isn't inside <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">dir</code>
+            at all — so matching the prefix isn't enough, the separator has to follow. There's a
+            test for exactly that.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">recursive tree building</span><span class="tag">binary search</span>
+          <span class="tag">O(1) amortized buffers</span><span class="tag">sorted invariants</span>
+        </div>
+      </section>
+
+      <!-- ── Correctness ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Correctness &amp; safety</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            <strong>14 end-to-end scenarios</strong>, including a 4&nbsp;KB binary file from
+            <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">/dev/urandom</code> compared
+            byte-for-byte after a full add → commit → checkout cycle, nested directories,
+            staged deletions, detached HEAD via abbreviated hash, and running from a
+            subdirectory. CI runs all of it on <strong>gcc and clang with
+            <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">-Werror</code></strong>, plus
+            the suite under <strong>AddressSanitizer and UBSan</strong> — which found a real
+            bug: <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">qsort</code> called with a
+            NULL pointer on an empty vector. It ran fine, but it's undefined behaviour.
+          </p>
+          <p>
+            The parts that destroy data are the ones written most carefully: every file is
+            written to a temp file and <strong>renamed atomically</strong>, so a crash can't
+            leave a half-written index behind; and <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">checkout</code>
+            refuses to run at all if it would overwrite uncommitted work or an untracked file —
+            checked <em>before</em> anything is touched, not halfway through.
+          </p>
+        </div>
+        <div class="tags" style="margin-top:6px;">
+          <span class="tag hi">ASan + UBSan</span><span class="tag">gcc + clang · -Werror</span>
+          <span class="tag">GitHub Actions CI</span><span class="tag">atomic rename</span>
+          <span class="tag">binary round-trip tests</span>
+        </div>
+      </section>
+
+      <!-- ── Next ── -->
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Where it goes next</h2><div class="rule"></div></div>
+        <article class="entry">
+          <ul>
+            <li><strong>diff</strong> — the real one: Myers' algorithm, which is dynamic programming over the edit graph. The biggest remaining piece.</li>
+            <li><strong>zlib compression</strong> for objects, which are currently stored raw — the project's first external dependency, and a clear space/CPU trade-off.</li>
+            <li><strong>merge</strong> — commits with two parents, finding the common ancestor in the DAG, three-way conflict detection. What turns a mini-Git into a Git.</li>
+            <li><strong>.mygitignore</strong> and <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">cat-file</code> — small, and the natural next commits.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- ── Contact band ── -->
+      <section class="cv-section reveal">
+        <div class="contact-band">
+          <h2>Want the <span>details?</span></h2>
+          <p>Happy to walk through any of it — the wiring and the schema, or the object store and the byte layouts. Whichever end you care about.</p>
+          <div class="contact-actions">
+            <a class="btn-solid" href="mailto:dinugeorgiansebastian@gmail.com"><svg class="icon icon-sm"><use href="#i-mail"/></svg> dinugeorgiansebastian@gmail.com</a>
+            <a class="btn-ghost" href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener">GitHub <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <span>© <span id="year">2026</span> Dinu Georgian Sebastian</span>
+    <span>hand-coded · html / css / js · no frameworks</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

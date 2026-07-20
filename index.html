@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Dinu Georgian Sebastian — Automation &amp; IoT Developer · CV</title>
+<meta name="description" content="CV of Dinu Georgian Sebastian — automation & IoT developer from Constanța, Romania. SCADA, sensors, Python, SQL and C. A greenhouse monitoring system running 24/7 on a Raspberry Pi 5, and a minimal Git implemented from scratch in C.">
+<meta property="og:title" content="Dinu Georgian Sebastian — Automation & IoT Developer">
+<meta property="og:description" content="SCADA · IoT · Python · SQL · C. A smart greenhouse running 24/7 on a Raspberry Pi 5, and a minimal Git written from scratch in C.">
+<meta property="og:type" content="website">
+
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Figtree:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ── SVG icon sprite ── -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-6.5-5.4-6.5-10.3A6.5 6.5 0 0 1 12 4a6.5 6.5 0 0 1 6.5 6.7C18.5 15.6 12 21 12 21z"/><circle cx="12" cy="10.6" r="2.3"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5.5" width="17" height="13" rx="2.5"/><path d="M4 7l8 6 8-6"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6.5 6.5l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4 5.7 2 2 0 0 1 6 3.5z"/>
+    </symbol>
+    <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9.5 14.5l5-5"/><path d="M11 7l1.8-1.8a4 4 0 0 1 5.7 5.7L16.7 12.7"/><path d="M13 17l-1.8 1.8a4 4 0 0 1-5.7-5.7L7.3 11.3"/>
+    </symbol>
+    <symbol id="i-git" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="6.5" cy="6" r="2.3"/><circle cx="6.5" cy="18" r="2.3"/><circle cx="17.5" cy="9" r="2.3"/>
+      <path d="M6.5 8.3v7.4"/><path d="M15.4 10.4c-2.4 1.6-6 1.4-7.6 4"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17"/><path d="M12 3.5c2.6 2.4 3.9 5.3 3.9 8.5s-1.3 6.1-3.9 8.5c-2.6-2.4-3.9-5.3-3.9-8.5s1.3-6.1 3.9-8.5z"/>
+    </symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 8V3.5h10V8"/><rect x="4" y="8" width="16" height="9" rx="2"/><rect x="7" y="14" width="10" height="6.5" rx="1"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M7 17L17 7"/><path d="M9 7h8v8"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ── Topbar ── -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#top" aria-label="Back to top">
+      <span class="brand-tick" aria-hidden="true"></span>
+      DINU G. <em>SEBASTIAN</em>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#profile">Profile</a>
+      <a href="#experience">Experience</a>
+      <a href="#project">Featured</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+      <a href="projects.html">Projects</a>
+      <a href="side-jobs.html">Side jobs</a>
+      <button class="btn-print" data-print title="Print this page or save it as a PDF CV">
+        <svg class="icon icon-sm"><use href="#i-print"/></svg> Print CV
+      </button>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap" id="top">
+
+  <!-- ── Masthead ── -->
+  <section class="masthead">
+    <div class="avail"><span class="avail-dot"></span> available for entry-level &amp; internship roles</div>
+    <h1>Dinu Georgian<br><span>Sebastian</span></h1>
+    <p class="role">
+      <strong>Automation &amp; IoT Developer</strong> — I build systems that monitor the
+      physical world: sensors and industrial data on one end, clean software and dashboards
+      on the other.
+    </p>
+    <div class="mast-meta">
+      <span><svg class="icon icon-sm"><use href="#i-pin"/></svg> Constanța, Romania</span>
+      <span><svg class="icon icon-sm"><use href="#i-mail"/></svg> dinugeorgiansebastian@gmail.com</span>
+      <span><svg class="icon icon-sm"><use href="#i-link"/></svg> linkedin.com/in/dinu-georgian-sebastian</span>
+    </div>
+  </section>
+
+  <!-- ── CV grid ── -->
+  <div class="cv-grid">
+
+    <!-- ── Rail ── -->
+    <aside class="rail">
+
+      <div class="rail-card photo-card">
+        <img class="photo" src="assets/photo.jpg" alt="Portrait of Dinu Georgian Sebastian">
+        <div class="photo-name">D. G. Sebastian</div>
+      </div>
+
+      <div class="rail-card">
+        <h3>Contact</h3>
+        <div class="c-row"><svg class="icon icon-sm"><use href="#i-pin"/></svg><b>Constanța, Romania</b></div>
+        <div class="c-row"><svg class="icon icon-sm"><use href="#i-mail"/></svg><a href="mailto:dinugeorgiansebastian@gmail.com">dinugeorgiansebastian@gmail.com</a></div>
+        <!-- Phone kept off the public site on purpose — it's on the PDF CV instead. -->
+        <div class="c-row"><svg class="icon icon-sm"><use href="#i-link"/></svg><a href="https://www.linkedin.com/in/dinu-georgian-sebastian-36490a208/" target="_blank" rel="noopener">LinkedIn</a></div>
+        <div class="c-row"><svg class="icon icon-sm"><use href="#i-git"/></svg><a href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener">GitHub</a></div>
+      </div>
+
+      <div class="rail-card">
+        <h3>Skills</h3>
+        <div class="skill-group">
+          <h4>Programming</h4>
+          <div class="tags">
+            <span class="tag hi">C</span><span class="tag hi">Python</span>
+            <span class="tag hi">SQL</span><span class="tag">C++</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Backend &amp; data</h4>
+          <div class="tags">
+            <span class="tag">Flask</span><span class="tag">PostgreSQL</span>
+            <span class="tag">REST APIs</span><span class="tag">NoSQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Systems</h4>
+          <div class="tags">
+            <span class="tag">Linux</span><span class="tag">systemd</span>
+            <span class="tag hi">Raspberry Pi</span><span class="tag">GPIO · SPI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Industrial</h4>
+          <div class="tags">
+            <span class="tag hi">SCADA</span><span class="tag">PLC</span>
+            <span class="tag">Sensors</span><span class="tag">Instrumentation</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>Tools</h4>
+          <div class="tags">
+            <span class="tag">Git</span><span class="tag">Adobe Premiere Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rail-card">
+        <h3>Languages</h3>
+        <div class="lang-row">Romanian <span>native</span></div>
+        <div class="lang-row">English <span>professional</span></div>
+      </div>
+
+      <button class="btn-print" data-print>
+        <svg class="icon icon-sm"><use href="#i-print"/></svg> Print / Save as PDF
+      </button>
+    </aside>
+
+    <!-- ── Main column ── -->
+    <main class="main">
+
+      <!-- Profile -->
+      <section id="profile" class="cv-section reveal">
+        <div class="sec-head"><h2>Profile</h2><div class="rule"></div></div>
+        <div class="profile">
+          <p>
+            <strong>Mathematics &amp; Informatics graduate</strong> (Ovidius University of
+            Constanța, 2025), with a first year of Electrical Engineering at Politehnica
+            Bucharest — the reason I'm equally comfortable with a multimeter and a debugger.
+          </p>
+          <p>
+            I've worked hands-on with <strong>SCADA and PLC systems</strong> at Constanța's water
+            utility and with SQL/NoSQL data as an analyst at World Vision. For my bachelor's
+            thesis I designed and built a complete <strong>greenhouse monitoring system</strong> —
+            hardware, database, backend, dashboard and alerting — running 24/7 as Linux
+            services. Since then I've been working closer to the metal: <strong>mygit</strong>,
+            a subset of Git written from scratch in C, with its own SHA-256 and binary
+            formats. I'm looking for a team where software meets real hardware.
+          </p>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience" class="cv-section reveal">
+        <div class="sec-head"><h2>Experience</h2><div class="rule"></div></div>
+
+        <article class="entry">
+          <h3>Software Developer <span class="at">·</span> <span class="org">Freelance / Self-employed</span></h3>
+          <div class="when">OCT 2025 — <span class="now">NOW</span></div>
+          <div class="meta">Constanța · remote</div>
+          <ul>
+            <li>Independent software work; currently building and documenting a <strong>full-stack IoT monitoring platform</strong> end-to-end (featured below).</li>
+            <!-- TODO: add 1–2 bullets about concrete freelance work: what you delivered, for whom, with what stack -->
+          </ul>
+        </article>
+
+        <article class="entry">
+          <h3>Analyst <span class="at">·</span> <span class="org">World Vision Romania</span></h3>
+          <div class="when">MAR 2024 — DEC 2024</div>
+          <div class="meta">Constanța · on-site · full-time</div>
+          <ul>
+            <li>Managed and queried <strong>SQL and NoSQL databases</strong> supporting the organisation's global campaigns and programs.</li>
+            <li>Prepared recurring <strong>reports and data extracts</strong> for program teams.</li>
+            <li>Produced <strong>multimedia content</strong> in Adobe Premiere Pro for campaign communication.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <h3>SCADA Intern <span class="at">·</span> <span class="org">RAJA SA — Constanța water utility</span></h3>
+          <div class="when">JUN 2023 — JUL 2023</div>
+          <div class="meta">Constanța · on-site · internship</div>
+          <ul>
+            <li>Hands-on with <strong>SCADA systems</strong> monitoring water treatment and distribution: flow rates, pressure, reservoir levels, pump temperatures.</li>
+            <li>Studied <strong>PLC ↔ SCADA communication</strong> for process monitoring and automation.</li>
+            <li>Assisted with <strong>data-acquisition workflows</strong> and automated export of operational data for daily analysis.</li>
+            <li>Field visits to chlorination stations (Negru Vodă, Pelinu) for troubleshooting and maintenance procedures.</li>
+          </ul>
+        </article>
+
+        <div class="slot-row">// hospitality &amp; seasonal work is listed separately → <a href="side-jobs.html">side jobs</a></div>
+      </section>
+
+      <!-- Featured projects -->
+      <section id="project" class="cv-section reveal">
+        <div class="sec-head"><h2>Featured projects</h2><div class="rule"></div></div>
+
+        <div class="project-panel">
+          <div class="project-head">
+            <h3>Greenhouse <span>Monitor</span></h3>
+            <span class="project-kicker">bachelor's thesis · runs 24/7</span>
+          </div>
+
+          <p class="desc">
+            A smart greenhouse that watches itself: <strong>six sensor types</strong> wired to a
+            Raspberry Pi 5 feed a PostgreSQL database; a secured Flask dashboard renders live
+            charts and heatmaps; a local TFT screen shows conditions at a glance — and when
+            flame or gas is detected, the buzzer fires and a <strong>Telegram alert</strong>
+            reaches my phone within seconds.
+          </p>
+
+          <div class="stats">
+            <span class="stat"><b>6</b> sensor types</span>
+            <span class="stat"><b>10 Hz</b> sampling + debounce</span>
+            <span class="stat"><b>6-min</b> climate aggregation</span>
+            <span class="stat"><b>5 s</b> alert polling</span>
+            <span class="stat"><b>24/7</b> systemd auto-restart</span>
+          </div>
+
+          <figure class="figure" role="img" aria-label="System architecture: five field sensors feed a Raspberry Pi 5, which writes to PostgreSQL; the database serves a Flask web dashboard, a TFT display and a Telegram alert engine.">
+            <svg class="diagram" viewBox="0 0 760 240" xmlns="http://www.w3.org/2000/svg">
+              <!-- drafting corner ticks -->
+              <path class="tick" d="M6 18 V6 H18"/>
+              <path class="tick" d="M742 6 H754 V18"/>
+              <path class="tick" d="M6 222 V234 H18"/>
+              <path class="tick" d="M742 234 H754 V222"/>
+
+              <!-- field sensors -->
+              <text x="14" y="24" class="t-tag">FIELD</text>
+              <rect x="14" y="34"  width="120" height="30" class="node"/><text x="26" y="53" class="t-title">DHT11</text><text x="82" y="53" class="t-sub">t° / RH</text>
+              <rect x="14" y="72"  width="120" height="30" class="node"/><text x="26" y="91" class="t-title">RAIN</text>
+              <rect x="14" y="110" width="120" height="30" class="node"/><text x="26" y="129" class="t-title">FLAME</text>
+              <rect x="14" y="148" width="120" height="30" class="node"/><text x="26" y="167" class="t-title">MQ-6</text><text x="72" y="167" class="t-sub">gas</text>
+              <rect x="14" y="186" width="120" height="30" class="node"/><text x="26" y="205" class="t-title">SOIL</text><text x="66" y="205" class="t-sub">moisture</text>
+
+              <!-- wires to Pi -->
+              <path class="flow" d="M134 49  C 168 49,  172 96, 206 108"/>
+              <path class="flow" d="M134 87  C 168 87,  172 108, 206 118"/>
+              <path class="flow" d="M134 125 C 168 125, 172 128, 206 128"/>
+              <path class="flow" d="M134 163 C 168 163, 172 148, 206 138"/>
+              <path class="flow" d="M134 201 C 168 201, 172 160, 206 148"/>
+
+              <!-- Raspberry Pi -->
+              <text x="208" y="24" class="t-tag">EDGE</text>
+              <rect x="206" y="88" width="150" height="80" class="node node-hi"/>
+              <circle cx="222" cy="104" r="3.5" class="pin"/>
+              <text x="232" y="108" class="t-title">RASPBERRY PI 5</text>
+              <text x="220" y="128" class="t-sub">GPIO · debounce 10 Hz</text>
+              <text x="220" y="142" class="t-sub">6-min averaging</text>
+              <text x="220" y="156" class="t-sub">buzzer patterns (SOS)</text>
+
+              <!-- Pi -> DB -->
+              <path class="flow" d="M356 128 C 388 128, 392 128, 424 128"/>
+              <text x="366" y="118" class="t-sub">INSERT</text>
+
+              <!-- PostgreSQL -->
+              <text x="426" y="24" class="t-tag">STORE</text>
+              <rect x="424" y="98" width="140" height="60" class="node node-hi"/>
+              <text x="440" y="122" class="t-title">POSTGRESQL</text>
+              <text x="440" y="140" class="t-sub">sensor_readings</text>
+
+              <!-- DB -> outputs -->
+              <path class="flow" d="M564 112 C 598 108, 602 62,  636 54"/>
+              <path class="flow" d="M564 128 C 598 128, 602 128, 636 128"/>
+              <path class="flow" d="M564 144 C 598 148, 602 196, 636 204"/>
+
+              <!-- outputs -->
+              <text x="638" y="24" class="t-tag">OUT</text>
+              <rect x="636" y="34" width="112" height="44" class="node"/>
+              <text x="648" y="52" class="t-title">FLASK</text>
+              <text x="648" y="67" class="t-sub">web dashboard</text>
+
+              <rect x="636" y="108" width="112" height="44" class="node"/>
+              <text x="648" y="126" class="t-title">TFT ST7735</text>
+              <text x="648" y="141" class="t-sub">local display</text>
+
+              <rect x="636" y="182" width="112" height="44" class="node"/>
+              <text x="648" y="200" class="t-title">TELEGRAM</text>
+              <text x="648" y="215" class="t-sub">fire / gas alerts</text>
+            </svg>
+            <figcaption class="figcaption">
+              <span><b>FIG. 01</b> — system architecture</span>
+              <span>auth · rate limiting · connection pooling · gunicorn + systemd</span>
+            </figcaption>
+          </figure>
+
+          <div class="project-foot">
+            <a class="btn-ghost" href="projects.html#greenhouse">Full write-up <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <!-- TODO: replace # with your real GitHub repo URL once the project is pushed -->
+            <a class="btn-ghost" href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener" title="Repo link coming — points to the profile for now">Source on GitHub <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+
+        <!-- Second project: mygit -->
+        <div class="project-panel">
+          <div class="project-head">
+            <h3>mygit <span>— Git, from scratch</span></h3>
+            <span class="project-kicker">systems programming · C11</span>
+          </div>
+
+          <p class="desc">
+            A working subset of Git in <strong>C11 with no external libraries</strong> —
+            <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">init · add · commit · log · status · checkout</code>.
+            Not a wrapper around the real thing: it implements the same model — a
+            <strong>content-addressable object store</strong> keyed by SHA-256 (also written
+            from scratch), a binary staging area, and refs — so <code style="font-family:var(--font-mono);font-size:13px;color:var(--brass);">checkout</code>
+            genuinely rebuilds any snapshot from hashes alone.
+          </p>
+
+          <div class="stats">
+            <span class="stat"><b>6</b> commands</span>
+            <span class="stat"><b>~1.4k</b> lines of C</span>
+            <span class="stat"><b>0</b> dependencies</span>
+            <span class="stat"><b>SHA-256</b> hand-written</span>
+            <span class="stat"><b>14</b> test scenarios</span>
+            <span class="stat"><b>ASan + UBSan</b> clean</span>
+          </div>
+
+          <div class="tags" style="margin-top:6px;">
+            <span class="tag hi">C11</span><span class="tag">POSIX I/O</span>
+            <span class="tag">binary serialization</span><span class="tag">SHA-256</span>
+            <span class="tag">recursive tree building</span><span class="tag">CI</span>
+          </div>
+
+          <div class="project-foot">
+            <a class="btn-ghost" href="projects.html#mygit">Full write-up <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+            <!-- TODO: replace with the real repo URL once it's pushed -->
+            <a class="btn-ghost" href="https://github.com/SebastianGeorgian" target="_blank" rel="noopener" title="Repo link coming — points to the profile for now">Source on GitHub <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section id="education" class="cv-section reveal">
+        <div class="sec-head"><h2>Education</h2><div class="rule"></div></div>
+
+        <article class="entry">
+          <h3>Mathematics &amp; Informatics <span class="at">·</span> <span class="org">Ovidius University of Constanța</span></h3>
+          <div class="when">2022 — 2025</div>
+          <ul>
+            <li>C++, OOP, databases, software engineering; bachelor's thesis: the <strong>GreenHouse Monitor</strong> system featured above.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <h3>Electrical Engineering <span class="at">·</span> <span class="org">Politehnica University of Bucharest</span></h3>
+          <div class="when">2020 — 2021</div>
+          <ul>
+            <li>Studies in mathematics, physics and engineering principles.</li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- Extras -->
+      <section id="extras" class="cv-section reveal">
+        <div class="sec-head"><h2>Certifications &amp; courses</h2><div class="rule"></div></div>
+        <article class="entry">
+          <h3>Driving licence <span class="at">·</span> <span class="org">Category B</span></h3>
+        </article>
+        <!-- TODO: add real certifications / courses here, using the same
+             <article class="entry"> structure as above. -->
+        <div class="slot-row">// add certifications or courses here — e.g. online courses, first-aid…</div>
+      </section>
+
+      <section class="cv-section reveal">
+        <div class="sec-head"><h2>Interests</h2><div class="rule"></div></div>
+        <div class="interests">
+          <span class="tag hi">Hardware tinkering</span>
+          <!-- TODO: replace these two with your real hobbies -->
+          <span class="tag">— add interest —</span>
+          <span class="tag">— add interest —</span>
+        </div>
+      </section>
+
+      <!-- Contact band -->
+      <section id="contact" class="cv-section reveal">
+        <div class="contact-band">
+          <h2>Let's <span>talk.</span></h2>
+          <p>
+            Based in Constanța, open to entry-level and internship roles in automation, IoT
+            or backend development — on-site, hybrid or remote.
+          </p>
+          <div class="contact-actions">
+            <a class="btn-solid" href="mailto:dinugeorgiansebastian@gmail.com"><svg class="icon icon-sm"><use href="#i-mail"/></svg> dinugeorgiansebastian@gmail.com</a>
+            <a class="btn-ghost" href="https://www.linkedin.com/in/dinu-georgian-sebastian-36490a208/" target="_blank" rel="noopener">LinkedIn <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-inner">
+    <span>© <span id="year">2026</span> Dinu Georgian Sebastian</span>
+    <span>hand-coded · html / css / js · no frameworks</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
